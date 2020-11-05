@@ -26,12 +26,12 @@ public class EmployeePayrollServiceTest {
         employeePayrollService. addEmployeesToPayroll(Arrays.asList(arrayOfEmps) );
         Instant end = Instant.now();
         System.out.println("Duration without Thread: "+ Duration.between(start, end));
-        Assert.assertEquals(  6, employeePayrollService.readFromDB());
-//        Instant threadStart = Instant.now();
-//        empLoyeePayrollService. addEmployeesToPayrollWithThreads(Arrays.asList(arrayOfEmps) ); ||
-//        Instant threadEnd = Instant.now();
-//        System.out.println("Duration with Thread: "+Duration.between(threadStart, threadEnd) );
-//
+        Instant threadStart = Instant.now();
+        employeePayrollService. addEmployeesToPayrollWithThread(Arrays.asList(arrayOfEmps) );
+        Instant threadEnd = Instant.now();
+        System.out.println("Duration with Thread: "+Duration.between(threadStart, threadEnd) );
+        Assert.assertEquals(  12, employeePayrollService.readFromDB());
+
     }
 
 }

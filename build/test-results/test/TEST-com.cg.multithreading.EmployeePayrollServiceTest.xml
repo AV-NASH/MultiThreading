@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.multithreading.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-05T17:13:37" hostname="AVINASH" time="7.742">
+<testsuite name="com.cg.multithreading.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-05T18:32:06" hostname="AVINASH" time="2.59">
   <properties/>
-  <testcase name="given6Employees_WhenAddedToDB_ShouldMatchEmployeeEntries" classname="com.cg.multithreading.EmployeePayrollServiceTest" time="7.742"/>
+  <testcase name="given6Employees_WhenAddedToDB_ShouldMatchEmployeeEntries" classname="com.cg.multithreading.EmployeePayrollServiceTest" time="2.59"/>
   <system-out><![CDATA[Jeff Bezosadded
-data not added
 Bill Gatesadded
-data not added
 Mark Zuckerbergadded
-data not added
 Sunderadded
-data not added
 Mukeshadded
-data not added
 Aniladded
-data not added
-Duration without Thread: PT7.589065S
+Duration without Thread: PT2.0609289S
+Aniladded
+Mark Zuckerbergadded
+Mukeshadded
+Sunderadded
+Bill Gatesadded
+Jeff Bezosadded
+Duration with Thread: PT0.5020507S
 ]]></system-out>
   <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 ]]></system-err>

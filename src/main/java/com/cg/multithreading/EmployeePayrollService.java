@@ -3,6 +3,7 @@ package com.cg.multithreading;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.TreeMap;
 
 public class EmployeePayrollService {
     public void addEmployeesToPayroll(List<EmployeePayroll> employeePayrollDataList) {
@@ -10,6 +11,28 @@ public class EmployeePayrollService {
             addEmployeeData(employeePayrollData.getEmpID(), employeePayrollData.getName(), employeePayrollData.getGender(),
                     employeePayrollData.getDate(), employeePayrollData.getSalary());
         });
+
+    }
+
+    public void addEmployeesToPayrollWithThread(List<EmployeePayroll> employeePayrollDataList) {
+        TreeMap<String, Boolean> employeeADDStatus=new TreeMap<>();
+        employeePayrollDataList.forEach(employeePayrollData -> {
+            Runnable task=()->{
+                employeeADDStatus.put(employeePayrollData.getName(),false);
+            addEmployeeData(employeePayrollData.getEmpID(), employeePayrollData.getName(), employeePayrollData.getGender(),
+                    employeePayrollData.getDate(), employeePayrollData.getSalary());
+                employeeADDStatus.put(employeePayrollData.getName(),true);
+            };
+            Thread thread=new Thread(task);
+                    thread.start();
+        });
+        while(employeeADDStatus.containsValue(false)){
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
@@ -29,6 +52,8 @@ public class EmployeePayrollService {
         }
     }
 
+
+
     public int readFromDB() {
         String query="select*from employee_service;";
         int count=0;
@@ -46,24 +71,3 @@ public class EmployeePayrollService {
 
 
 }
-//    public void addEmployeesToPayrollwithThreads(List<EmployeePayrollData> employeePayrollDataList) {
-//        Map<Integer, Boolean> employeeAdditionStatus = new HashMap<Integer, Boolean>();
-//        emp loyeePayrollDataList.forEach(employeePayrollData —> {
-//                Runnable task = () -> {
-//. emp LoyeeAdditionStatus.put(employeePayrollData.hashCode(), false); OC
-//            System. out.println("Employee Being Added: "+Thread.currentThread().getName());
-//            this. addEmp loyeeToPayroll(employeePayrollData.name, employeePayrollData.salary,
-//                    emp LoyeePayrollData.startDate, employeePayrollData.gender) ;
-//            emp LoyeeAdditionStatus.put(employeePayrollData.hashCode(), true);
-//            System.out.println("Employee Added: '+Thread.currentThread().getName());
-//        };
-//        Thread thread = new Thread(task, employeePayrollData. name) ;
-//        thread.start();
-//        Hi; [1
-//        while (employeeAdditionStatus.containsValue(false)) {
-//            try { Thread.sleep( millis: 18);
-//            } catch (InterruptedException e) { }
-//        }
-//        System.out.println(this.employeePayrollList) ;
-//}
-//}
