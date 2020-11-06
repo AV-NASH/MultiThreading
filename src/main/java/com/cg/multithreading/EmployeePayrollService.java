@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class EmployeePayrollService {
+
     public void addEmployeesToPayroll(List<EmployeePayroll> employeePayrollDataList) {
         employeePayrollDataList.forEach(employeePayrollData -> {
             addEmployeeData(employeePayrollData.getEmpID(), employeePayrollData.getName(), employeePayrollData.getGender(),
@@ -13,6 +14,7 @@ public class EmployeePayrollService {
         });
 
     }
+
 
     public void addEmployeesToPayrollWithThread(List<EmployeePayroll> employeePayrollDataList) {
         TreeMap<String, Boolean> employeeADDStatus=new TreeMap<>();
@@ -23,9 +25,10 @@ public class EmployeePayrollService {
                     employeePayrollData.getDate(), employeePayrollData.getSalary());
                 employeeADDStatus.put(employeePayrollData.getName(),true);
             };
-            Thread thread=new Thread(task);
+            Thread thread=new Thread(task,employeePayrollData.getName());
                     thread.start();
         });
+
         while(employeeADDStatus.containsValue(false)){
             try {
                 Thread.sleep(1);
@@ -45,7 +48,7 @@ public class EmployeePayrollService {
         try {
             Statement statement = connection.createStatement();
             int rowaffected = statement.executeUpdate(query1);
-            if ((rowaffected == 1)) System.out.println(name + "added");
+            if ((rowaffected == 1)) System.out.println(name + " added");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

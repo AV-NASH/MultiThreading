@@ -20,7 +20,7 @@ public class EmployeePayrollServiceTest {
         new EmployeePayroll(5, "Sunder",  'M',  600000.0, LocalDate.now()),
         new EmployeePayroll( 6,"Mukesh",  'M', 1000000.0, LocalDate.now()),
         new EmployeePayroll( 7, "Anil",  'M',  200000.0, LocalDate.now() )
-};
+        };
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
         Instant start = Instant.now();
         employeePayrollService. addEmployeesToPayroll(Arrays.asList(arrayOfEmps) );

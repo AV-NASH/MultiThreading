@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.multithreading.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-05T18:32:06" hostname="AVINASH" time="2.59">
+<testsuite name="com.cg.multithreading.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-06T15:57:58" hostname="AVINASH" time="2.588">
   <properties/>
-  <testcase name="given6Employees_WhenAddedToDB_ShouldMatchEmployeeEntries" classname="com.cg.multithreading.EmployeePayrollServiceTest" time="2.59"/>
-  <system-out><![CDATA[Jeff Bezosadded
-Bill Gatesadded
-Mark Zuckerbergadded
-Sunderadded
-Mukeshadded
-Aniladded
-Duration without Thread: PT2.0609289S
-Aniladded
-Mark Zuckerbergadded
-Mukeshadded
-Sunderadded
-Bill Gatesadded
-Jeff Bezosadded
-Duration with Thread: PT0.5020507S
+  <testcase name="given6Employees_WhenAddedToDB_ShouldMatchEmployeeEntries" classname="com.cg.multithreading.EmployeePayrollServiceTest" time="2.588"/>
+  <system-out><![CDATA[Connection established with id 1
+Connection successful with id 1 for thread Test worker
+Jeff Bezos added
+Connection established with id 2
+Connection successful with id 2 for thread Test worker
+Bill Gates added
+Connection established with id 3
+Connection successful with id 3 for thread Test worker
+Mark Zuckerberg added
+Connection established with id 4
+Connection successful with id 4 for thread Test worker
+Sunder added
+Connection established with id 5
+Connection successful with id 5 for thread Test worker
+Mukesh added
+Connection established with id 6
+Connection successful with id 6 for thread Test worker
+Anil added
+Duration without Thread: PT1.6249731S
+Connection established with id 7
+Connection successful with id 7 for thread Bill Gates
+Connection established with id 8
+Connection successful with id 8 for thread Anil
+Connection established with id 9
+Connection successful with id 9 for thread Mukesh
+Connection established with id 10
+Connection successful with id 10 for thread Sunder
+Connection established with id 11
+Connection successful with id 11 for thread Jeff Bezos
+Bill Gates added
+Connection established with id 12
+Mukesh added
+Connection successful with id 12 for thread Mark Zuckerberg
+Anil added
+Sunder added
+Jeff Bezos added
+Mark Zuckerberg added
+Duration with Thread: PT0.9121549S
+Connection established with id 13
+Connection successful with id 13 for thread Test worker
 ]]></system-out>
   <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 ]]></system-err>
