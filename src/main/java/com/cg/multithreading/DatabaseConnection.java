@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Enumeration;
 public class DatabaseConnection {
     private static int counterConnection=0;
-    public static synchronized Connection getConnecton() {
+    public  synchronized Connection getConnecton() {
         counterConnection++;
         String jdbcURL="jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
         String userName="root";

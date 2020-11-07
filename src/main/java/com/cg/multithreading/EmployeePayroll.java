@@ -13,8 +13,8 @@ public class EmployeePayroll {
 
 
 
-    public EmployeePayroll(int empID, String name,char gender,  double salary,LocalDate date) {
-        this.empID = empID;
+    public EmployeePayroll( String name,char gender,  double salary,LocalDate date) {
+        this.empID = 0;
         this.name = name;
         this.gender=gender;
 
