@@ -22,6 +22,13 @@ public class EmployeePayroll {
         this.salary = salary;
     }
 
+    public EmployeePayroll(int empID, String name, char gender, LocalDate date, double salary) {
+        this.empID = empID;
+        this.name = name;
+        this.gender = gender;
+        this.date = date;
+        this.salary = salary;
+    }
 
 
     public int getEmpID() {
@@ -67,5 +74,15 @@ public class EmployeePayroll {
         this.gender = gender;
     }
 
+    @Override
+    public String toString() {
+        return "EmployeePayroll{" +
+                "empID=" + empID +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                ", date=" + date +
+                ", salary=" + salary +
+                '}';
+    }
 }
 
